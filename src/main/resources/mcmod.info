@@ -1,0 +1,16 @@
+[
+{
+  "modid": "teamy",
+  "name": "Teamy",
+  "description": "Shows the location of players in your team!.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Jaredlll08", "Darkhax"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
