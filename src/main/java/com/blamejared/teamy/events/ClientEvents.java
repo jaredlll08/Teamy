@@ -6,16 +6,13 @@ import net.minecraft.client.renderer.entity.*;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.*;
-import net.minecraftforge.client.event.RenderWorldLastEvent;
+import net.minecraftforge.client.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.*;
 
-@SideOnly(Side.CLIENT)
 public class ClientEvents {
     
     @SubscribeEvent
     public void onRenderWorldLast(RenderWorldLastEvent event) {
-        
         doRender(0, 80, 0);
         doRender(100, 80, 0);
         doRender(0, 80, 100);
@@ -28,9 +25,9 @@ public class ClientEvents {
         Minecraft mc = Minecraft.getMinecraft();
         if(renderManager.renderViewEntity != null) {
             {
-                StringBuilder label = new StringBuilder(Math.floor(renderManager.renderViewEntity.getDistance(x, y, z)*100)/100 + " M");
+                StringBuilder label = new StringBuilder(Math.floor(renderManager.renderViewEntity.getDistance(x, y, z) * 100) / 100 + " M");
                 double sq = renderManager.renderViewEntity.getDistance(x, y, z);
-                if(sq > mc.gameSettings.renderDistanceChunks * 16  || renderManager.renderViewEntity.getDistance(x, y, z) < 5) {
+                if(sq > mc.gameSettings.renderDistanceChunks * 16 || renderManager.renderViewEntity.getDistance(x, y, z) < 5) {
                     return;
                 }
                 GlStateManager.pushAttrib();
